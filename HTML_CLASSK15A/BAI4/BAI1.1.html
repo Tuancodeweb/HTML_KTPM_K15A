@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url("./oriental.png");
+            margin: 140px auto;
+            padding: 0px auto;
+            box-sizing: border-box;
+            font-family: 'Dancing Script', cursive;
+            font-size: 24px;
+            max-width: 960px;
+            height: 590px;
+        }
+        section{background-color: #161510;box-shadow: 3px 3px 3px 3px black;-moz-box-shadow:3px 3px 3px 3px;-webkit-box-shadow: 3px 3px 3px 3px;-o-box-shadow: 3px 3px 3px 3px;-ms-box-shadow: 3px 3px 3px 3px;}
+        #avatar{float: left;}
+        .navi{padding: 20px 20px 14px 20px;}
+        #content_fix_float::after{display: table; clear: both; content: ""}
+        h2{color: white; margin: 0px 0px 0px 0px; padding: 20px 0px 13px 0px;}
+        a{text-decoration: none; padding-right: 12px; color: white;font-family: 'Open Sans Condensed', sans-serif; font-size: 19px; }
+        a:hover{ background-color: thistle; border-radius: 6px; border: 1px solid goldenrod;font-family: 'Open Sans Condensed', sans-serif; font-size: 19px;}
+        .color_box{color: white; padding-bottom: 5px; line-height: 37px;}
+        .canvasjs-chart-canvas{margin-top: 11px;}
+        .active{ background-color: thistle; border-radius: 6px; border: 1px solid goldenrod;}
+    </style>
+            <script>
+                window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	title: {
+        text: "Kinh nghiệm ngôn ngữ",
+	},
+	axisY: {
+		title: "đơn vị đánh giá (%)",
+		suffix: "%",
+		includeZero: false
+	},
+	axisX: {
+		title: "biểu đồ ngôn ngữ"
+	},
+	data: [{
+		type: "column",
+		yValueFormatString: "#,##0.0#\"%\"",
+		dataPoints: [
+			{ label: "HTML", y: 6.10 },	
+			{ label: "CSS", y: 6.11 },	
+			{ label: "Javascript", y: 7.00 },
+			{ label: "jQuery", y: 6.80 },	
+			{ label: "ReactJS", y: 7.77 },
+			{ label: "ReactNative", y: 7.10 },			
+		]
+	}]
+});
+chart.render();
+
+}
+            </script>
+</head>
+    <body>
+        <section>
+            <div id="avatar">
+                <div class="navi">
+                    <img class="img_avatar" src="https://scontent.fhan3-1.fna.fbcdn.net/v/t1.0-9/39249540_286926658557256_6186122811828862976_n.jpg?_nc_cat=0&oh=44242b5aebdd54e2e789b99f22429bde&oe=5C36F351" alt="ảnh avatar">
+                </div>
+            </div>
+
+            <div id="content_fix_float">
+                <div class="title">
+                        <h2>Kim Tuân</h2>
+                </div>
+                <div class="buttom_link">
+                   <a href="BAI1.html" target="_blank" rel="home">Tổng quan</a>
+                   <a href="BAI1.1.html" class="active" target="_blank" rel="home">Kinh nghiệm</a>
+                   <a href="BAI1.2.html" target="_blank" rel="home">Phản hồi</a>
+                </div>
+                <div  class="main">
+                        <div id="chartContainer" style="height: 370px; width: 45%;"></div>
+                        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
